@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class LibraryController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -21,15 +24,7 @@ class LibraryController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('library.create');
     }
 
     /**
@@ -37,7 +32,7 @@ class LibraryController extends Controller
      */
     public function show(Library $library)
     {
-        //
+        return view('library.show', compact('library'));
     }
 
     /**

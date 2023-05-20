@@ -9,9 +9,11 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('library.index')}}">Lista delle librerie</a>
           </li>
+          @auth
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{{route('library.create')}}">Inserisci libreria</a>
           </li>
+          @endauth
           <li class="nav-item dropdown">
             @Auth
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
