@@ -19,3 +19,4 @@ Route::get('/', [PublicController::class, ('homepage')])->name('homepage');
 Route::get('/library/index', [LibraryController::class, 'index'])->name('library.index');
 Route::get('/library/create', [LibraryController::class, 'create'])->name('library.create');
 Route::get('/library/show/{library}', [LibraryController::class, 'show'])->name('library.show');
+Route::get('/library/edit/{library}', [LibraryController::class, 'edit'])->name('library.edit');

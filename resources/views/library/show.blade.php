@@ -10,6 +10,9 @@
                 <p class="small">Inserito da: <span class="fst-italic">{{$library->user->name}}</span></p>
                 <hr>
                 <a href="{{route('library.index')}}" class="btn btn-dark">Torna indietro</a>
+                @if(Auth::user() && Auth::user()-> id == $library->user_id)
+                <a href="{{route('library.edit', compact('library'))}}" class="btn btn-danger">Modifica</a>
+                @endif
             </div>
         </div>
      </div>

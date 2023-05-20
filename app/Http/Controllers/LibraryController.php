@@ -40,22 +40,7 @@ class LibraryController extends Controller
      */
     public function edit(Library $library)
     {
-        //
+        return view('library.edit', compact('library'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Library $library)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Library $library)
-    {
-        //
-    }
 }
