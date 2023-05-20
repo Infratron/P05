@@ -36,6 +36,18 @@
             <input type="text" wire:model="address" class="form-control" id="address">
          </div>
 
+         <div class="mb-2">
+            <label for="best-sellers" class="form-label my-2">I libri più venduti</label><br>
+            <hr>
+            @foreach($books as $book)
+            <div class="display-flex">
+                <input id="book_{{$book->id}}" type="checkbox" wire:model="best_sellers" value="{{$book->id}}">
+                <label for="book_{{$book->id}}" class="ms-2">{{$book->title}} , {{$book->author}}<br></span>
+            </div>
+            @endforeach
+            <hr>
+         </div>
+
          <div>
              <label for="description" class="form-label">Descrizione Libreria</label>
              <textarea wire:model="description" id="description" cols="30" rows="7" class="form-control shadow"></textarea>

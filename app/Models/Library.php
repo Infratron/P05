@@ -20,4 +20,8 @@ class Library extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function books(){
+        return $this->belongsToMany(Book::class);
+    }
 }
