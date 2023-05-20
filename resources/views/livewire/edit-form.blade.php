@@ -20,6 +20,18 @@
             <img width="250" src="{{Storage::url($library->image)}}" alt="Foto di {{$library->name}}">
         </div>
 
+        <div class="mb-2">
+            <label for="best-sellers" class="form-label my-2">I libri più venduti</label><br>
+            <hr>
+            @foreach($books as $book)
+            <div class="display-flex">
+                <input id="book_{{$book->id}}" type="checkbox" wire:model="best_sellers" value="{{$book->id}}">
+                <label for="book_{{$book->id}}" class="ms-2">{{$book->title}} , {{$book->author}}<br></span>
+            </div>
+            @endforeach
+            <hr>
+         </div>
+
         <div>
             <label for="image" class="form-label">Foto libreria</label>
             <input type="file" wire:model="image" class="form-control" id="image">
