@@ -49,5 +49,6 @@
 
         <button type="submit" class="btn btn-primary my-2">Inserisci libreria</button>
         <a href="{{route('library.show', compact('library'))}}" class="btn btn-dark mx-2 my-2">Torna indietro</a>
+        <button type="button" class="btn btn-warning" wire:click="destroy">Cancella libreria</button>
       </form>
 </div>

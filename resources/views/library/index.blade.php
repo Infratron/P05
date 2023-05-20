@@ -1,6 +1,9 @@
 <x-layout>
     <div class="container my-5">
         <div class="row justify-content-center">
+            @if(Session::has('LibraryDeleted'))
+            <p class="alert alert-info">{{ Session::get('LibraryDeleted') }}</p>
+           @endif
             @forelse($libraries as $library)
             <div class="col-12 col-md-3">
                 <div class="card">

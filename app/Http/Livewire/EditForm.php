@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 class EditForm extends Component
 {
@@ -34,6 +35,14 @@ class EditForm extends Component
         }
         
         session()->flash('LibraryUpdated', 'Hai aggiornato correttamente la libreria');
+    }
+
+    public function destroy(){
+        Storage::delete($this->old_image);
+        $this->library->delete();
+
+        session()->flash('LibraryDeleted', 'Hai cancellato correttamente la libreria');
+        return redirect(route('library.index'));
     }
 
     public function mount(){
